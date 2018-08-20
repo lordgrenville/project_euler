@@ -14,4 +14,4 @@ while count < 10001:
         count += 1
     num += 2
 
-print(count, prime_list)
+print(prime_list[-1])
