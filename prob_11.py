@@ -43,7 +43,7 @@ for i in range(len(numbers)):
 for line in verticals:
     vertical_tops.append(max([get_prod(line[a:a + window]) for a in range(len(line) - window + 1)]))
 v_max = max(vertical_tops)
-solutions = []
+
 for i in range(len(numbers) - window + 1):
     for j in range(len(numbers) - window + 1):
         diagonals.append(get_prod([numbers[i + k][j + k] for k in range(window)]))
