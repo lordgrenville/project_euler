@@ -1,26 +1,27 @@
-def is_triangular(n):
-    if n >= 1:
-        triangular = [1]
-        while len(triangular) < n:
-            triangular.append(triangular[-1] + len(triangular) + 1)
-        return triangular
-    return
+import time
+from collections import Counter
+from prob_11 import get_prod
 
 
-def divisor_counter(n):
-    num, count = 2, 2
-    while num < n:
-        if n % num == 0:
-            count += 1
-        num += 1
-    return count
+def prime_factors(n):
+    factors = []
+    d = 2
+    while n > 1:
+        while n % d == 0:
+            factors.append(d)
+            n /= d
+        d = d + 1
+        if d*d > n:
+            if n > 1:
+                factors.append(n)
+            break
+    return factors
 
 
-x = 1000000
-while divisor_counter(x) < 500:
+start = time.time()
+x, tri, num_factors = 7, 28, 6
+while num_factors < 500:
+    tri = (x * (x + 1)) / 2
+    num_factors = get_prod([i + 1 for i in Counter(prime_factors(tri)).values()])
     x += 1
-print(x)
-
-assert divisor_counter(28) == 6
-assert is_triangular(1) == [1]
-assert is_triangular(5) == [1, 3, 6, 10, 15]
+print("answer is {}, time is {}".format(tri, time.time() - start))
