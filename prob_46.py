@@ -12,8 +12,8 @@ def find_goldbach(num):
                 if p + sq == num:
                     return True
     return False
-
-for n in composites[1:]:  # omit 1
+composites = [i for i in set(range(100000)).difference(primes) if i % 2 != 0][1:]  # omit 1
+for n in composites:
     if not find_goldbach(n):
         print(n)
         break
