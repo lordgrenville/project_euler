@@ -8,4 +8,4 @@ def fibonacci(limit):
         new = new_term
     return sequence
 	
-sum([i for i in fibonacci(4000000) if i%2 == 0])
+print(sum([i for i in fibonacci(4000000) if i%2 == 0]))
