@@ -1,4 +1,4 @@
-def count_ways(total, coins):
+def count_ways(total: int, coins: [int]) -> (int, [int]):
     if total < 0:
         return 0
     if total == 0:
