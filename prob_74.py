@@ -1,11 +1,6 @@
 from math import factorial
+from helpers import get_digits
 
-def get_digits(n: int) -> [int]:
-    digits = []
-    while n:
-        digits.append(n % 10)
-        n //= 10
-    return digits
 
 sum_fac = lambda n: sum(map(factorial, get_digits(n)))
 
