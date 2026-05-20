@@ -1,6 +1,6 @@
 import time
 from collections import Counter
-from prob_11 import get_prod
+from helpers import get_prod
 
 
 def prime_factors(n):
@@ -11,7 +11,7 @@ def prime_factors(n):
             factors.append(d)
             n /= d
         d = d + 1
-        if d*d > n:
+        if d * d > n:
             if n > 1:
                 factors.append(n)
             break

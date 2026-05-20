@@ -1,9 +1,4 @@
-def get_prod(multipliable_list):
-    x = 1
-    for i in multipliable_list:
-        x *= i
-    return x
-
+from helpers import get_prod
 
 if __name__ == "__main__":
     texts = '''

@@ -1,11 +1,5 @@
 from itertools import combinations_with_replacement
-
-def proper_divisors_sum(num):
-    divisors = [1]
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            divisors += [i, num // i]
-    return sum(set(divisors))
+from helpers import proper_divisors_sum
 
 is_abundant = lambda x: x < proper_divisors_sum(x)
 abundants = [n for n in range(1, 29000) if is_abundant(n)]

@@ -1,6 +1,4 @@
-def is_palindromic(input):
-    return str(input) == str(input)[::-1]
-
+from helpers import is_palindromic
 
 if __name__ == '__main__':
 	assert not is_palindromic('cat')

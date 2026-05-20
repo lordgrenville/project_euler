@@ -1,4 +1,4 @@
-from prob_10 import sieve_of_eratosthenes
+from helpers import sieve_of_eratosthenes
 
 primes = sieve_of_eratosthenes(1000000)
 combos = lambda n: [int(n[i:] + n[:i]) for i in range(len(list(n)))]
