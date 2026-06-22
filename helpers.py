@@ -28,7 +28,7 @@ def get_num_digits(n: int) -> int:
 
 
 def sieve_of_eratosthenes(n):
-    naive = set(range(3, n, 2)).union({2})
+    naive = set(range(2, n))
     primes, non_primes = [], []
     for i in range(2, int(n**0.5) + 1):
         if i not in non_primes:
