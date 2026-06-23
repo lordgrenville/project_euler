@@ -9,7 +9,7 @@ from helpers import sieve_of_eratosthenes
 # Then, for each prime, apply this for all its multiples until you get to n
 
 
-def phi_range(n: int) -> {int: int}:
+def phi_range(n: int) -> dict[int, int]:
     """
     Calculate {x: phi(x) for x in 1..n}
     """
