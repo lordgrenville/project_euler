@@ -23,6 +23,7 @@ def phi_range(n: int) -> dict[int, int]:
     # return {k: int(v) for k, v in di.items()}  # cast to int, not necessary for this question though
 
 
-di = phi_range(1_000_000)
-di = {k: k / v for k, v in di.items()}  # n / phi(n)
-print(max(di, key=di.get))
+if __name__ == '__main__':
+    di = phi_range(1_000_000)
+    di = {k: k / v for k, v in di.items()}  # n / phi(n)
+    print(max(di, key=di.get))
