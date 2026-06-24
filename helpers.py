@@ -9,7 +9,7 @@ def get_prod(multipliable_list):
     return x
 
 
-def get_digits(n: int) -> [int]:
+def get_digits(n: int) -> list[int]:
     digits = []
     while n:
         digits.append(n % 10)
