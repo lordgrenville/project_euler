@@ -5,8 +5,8 @@ getcontext().prec = 102
 
 res = 0
 for n in range(1, 100):
-    sqrt = str(Decimal(n).sqrt())
-    if '.' in sqrt:  # not a square
-        res += sum(int(x) for x in sqrt.replace(".", "")[:100])
+    if n**0.5 % 1 != 0:  # not a square
+        sqrt_first_100 = str(Decimal(n).sqrt()).replace(".", "")[:100]
+        res += sum(int(x) for x in sqrt_first_100)
 
 print(res)

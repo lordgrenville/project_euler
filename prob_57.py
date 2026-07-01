@@ -1,4 +1,4 @@
-def conversion(num: int, denom: int) -> (int, int):
+def conversion(num: int, denom: int) -> tuple[int, int]:
     # since we added 1 before the final step, we remove the denominator from the numerator
     old_input_num = num - denom
     new_input_num = old_input_num + 2 * denom  # now we're adding 2
