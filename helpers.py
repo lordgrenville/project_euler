@@ -1,3 +1,7 @@
+from math import isqrt
+from typing import List
+
+
 def is_palindromic(input):
     return str(input) == str(input)[::-1]
 
@@ -44,3 +48,23 @@ def proper_divisors_sum(num):
         if num % i == 0:
             divisors += [i, num // i]
     return sum(divisors)
+
+
+def fast_primes_below_n(n: int) -> List[int]:
+    """
+    Fast code to get an array of "how many primes below x"
+    """
+    sieve = bytearray(b"\x01") * (n + 1)
+    sieve[0:2] = b"\x00\x00"
+    for i in range(2, int(isqrt(n)) + 1):
+        if sieve[i]:
+            step = i
+            start = i * i
+            sieve[start : n + 1 : step] = b"\x00" * ((n - start) // step + 1)
+    pi = [0] * (n + 1)
+    c = 0
+    for i, is_p in enumerate(sieve):
+        if is_p:
+            c += 1
+        pi[i] = c
+    return pi
